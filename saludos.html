@@ -1,0 +1,40 @@
+<!-- Página de Saludos -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Saludos del Mundo</title>
+    <script>
+        // Mostrar el saludo correspondiente
+        function mostrarSaludo() {
+            const idioma = document.getElementById("selectorIdioma").value;
+            let saludo = "";
+
+            switch(idioma) {
+                case "es": saludo = "¡Hola! Bienvenidos a mi tarea."; break;
+                case "en": saludo = "Hello! Welcome to my homework."; break;
+                case "fr": saludo = "Bonjour! Bienvenue dans mes devoirs."; break;
+                case "de": saludo = "Hallo! Willkommen zu meinen Hausaufgaben."; break;
+                case "it": saludo = "Ciao! Benvenuto nei miei compiti."; break;
+                default: saludo = "Por favor, selecciona un idioma.";
+            }
+            document.getElementById("resultado").innerText = saludo;
+        }
+    </script>
+</head>
+<body>
+    <h1>Sección de Saludos Interactivos</h1>
+    <p>Selecciona un idioma para ver su saludo típico:</p>
+    
+    <select id="selectorIdioma" onchange="mostrarSaludo()">
+        <option value="">-- Selecciona un idioma --</option>
+        <option value="es">Español</option>
+        <option value="en">Inglés</option>
+        <option value="fr">Francés</option>
+        <option value="de">Alemán</option>
+        <option value="it">Italiano</option>
+    </select>
+    
+    <h2 id="resultado" style="color: #007acc; margin-top: 20px;"></h2>
+</body>
+</html>
